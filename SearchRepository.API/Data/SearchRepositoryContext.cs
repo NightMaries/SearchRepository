@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.EntityFrameworkCore;
 using SearchRepository.API.Entities;
 
@@ -9,6 +10,8 @@ public class SearchRepositoryContext: DbContext{
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=21ip213;Trusted_connection=True;");
+        optionsBuilder.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = 21ip213; Trusted_Connection = True;");
+        
+        Console.WriteLine(optionsBuilder.UseSqlServer());
     }
 }
