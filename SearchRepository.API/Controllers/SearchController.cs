@@ -15,11 +15,11 @@ public class SearchController: ControllerBase
         _searchService = searchService;
     }
     [HttpPost]
-    public ActionResult CreateSearch(JsonRequest jsonRequest)
+    public async Task<ActionResult> CreateSearch(JsonRequest jsonRequest)
     {
         try
         {
-            _searchService.AddSearch(jsonRequest);
+            await _searchService.AddSearch(jsonRequest);
             return Created("http://localhost:7147/api", jsonRequest);
         }
         catch
@@ -29,12 +29,12 @@ public class SearchController: ControllerBase
     }
 
     [HttpDelete]
-    public ActionResult DeleteSearch(int id)
+    public async Task<ActionResult> DeleteSearch(int id)
     {
         try
         {   
-            _searchService.DeleteSearch(id);
-            return Ok();
+            await _searchService.DeleteSearch(id);
+            return NoContent();
         }
         catch
         {
@@ -43,8 +43,13 @@ public class SearchController: ControllerBase
     }
 
     [HttpGet]
-    public ActionResult GetSearchs(string subject)
-    {   
-        return Ok(_searchService.GetSearch(subject));
+    public async Task<ActionResult<JsonRequest>> GetSearchs(string subject)
+    {
+        var search = await _searchService.GetSearch(subject);
+        if (search == null)
+            return BadRequest();
+        else
+            return Ok(search);
+
     }
 }

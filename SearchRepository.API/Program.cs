@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<SearchRepositoryContext>();
+builder.Services.AddDbContext<SearchRepositoryContext>();
 builder.Services.AddScoped<IConvertToJsonService, ConvertToJsonService>();
 builder.Services.AddScoped<IConnectionGitHubService, ConnectionGitHubService>();
 builder.Services.AddScoped<ISearchService, SearchService>();
