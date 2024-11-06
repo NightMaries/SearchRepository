@@ -1,7 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "Z:\\VisualCodeProjects\\SearchRepository\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A1285DEE-303F-42D4-B927-7E66D383538F}|SearchRepository.API\\SearchRepository.API.csproj|z:\\visualcodeprojects\\searchrepository\\searchrepository.api\\controllers\\searchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1285DEE-303F-42D4-B927-7E66D383538F}|SearchRepository.API\\SearchRepository.API.csproj|solutionrelative:searchrepository.api\\controllers\\searchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1285DEE-303F-42D4-B927-7E66D383538F}|SearchRepository.API\\SearchRepository.API.csproj|z:\\visualcodeprojects\\searchrepository\\searchrepository.api\\services\\searchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1285DEE-303F-42D4-B927-7E66D383538F}|SearchRepository.API\\SearchRepository.API.csproj|solutionrelative:searchrepository.api\\services\\searchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1285DEE-303F-42D4-B927-7E66D383538F}|SearchRepository.API\\SearchRepository.API.csproj|z:\\visualcodeprojects\\searchrepository\\searchrepository.api\\services\\converttojsonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1285DEE-303F-42D4-B927-7E66D383538F}|SearchRepository.API\\SearchRepository.API.csproj|solutionrelative:searchrepository.api\\services\\converttojsonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1285DEE-303F-42D4-B927-7E66D383538F}|SearchRepository.API\\SearchRepository.API.csproj|z:\\visualcodeprojects\\searchrepository\\searchrepository.api\\interfaces\\isearchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1285DEE-303F-42D4-B927-7E66D383538F}|SearchRepository.API\\SearchRepository.API.csproj|solutionrelative:searchrepository.api\\interfaces\\isearchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1285DEE-303F-42D4-B927-7E66D383538F}|SearchRepository.API\\SearchRepository.API.csproj|z:\\visualcodeprojects\\searchrepository\\searchrepository.api\\interfaces\\iconverttojsonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1285DEE-303F-42D4-B927-7E66D383538F}|SearchRepository.API\\SearchRepository.API.csproj|solutionrelative:searchrepository.api\\interfaces\\iconverttojsonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1285DEE-303F-42D4-B927-7E66D383538F}|SearchRepository.API\\SearchRepository.API.csproj|z:\\visualcodeprojects\\searchrepository\\searchrepository.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A1285DEE-303F-42D4-B927-7E66D383538F}|SearchRepository.API\\SearchRepository.API.csproj|solutionrelative:searchrepository.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +43,84 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IConvertToJsonService.cs",
+              "DocumentMoniker": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\Interfaces\\IConvertToJsonService.cs",
+              "RelativeDocumentMoniker": "SearchRepository.API\\Interfaces\\IConvertToJsonService.cs",
+              "ToolTip": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\Interfaces\\IConvertToJsonService.cs",
+              "RelativeToolTip": "SearchRepository.API\\Interfaces\\IConvertToJsonService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T09:12:12.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ConvertToJsonService.cs",
+              "DocumentMoniker": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\Services\\ConvertToJsonService.cs",
+              "RelativeDocumentMoniker": "SearchRepository.API\\Services\\ConvertToJsonService.cs",
+              "ToolTip": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\Services\\ConvertToJsonService.cs",
+              "RelativeToolTip": "SearchRepository.API\\Services\\ConvertToJsonService.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAIwBkAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T09:11:05.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SearchService.cs",
+              "DocumentMoniker": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\Services\\SearchService.cs",
+              "RelativeDocumentMoniker": "SearchRepository.API\\Services\\SearchService.cs",
+              "ToolTip": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\Services\\SearchService.cs",
+              "RelativeToolTip": "SearchRepository.API\\Services\\SearchService.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAUwDEAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T09:09:28.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\appsettings.json",
+              "RelativeDocumentMoniker": "SearchRepository.API\\appsettings.json",
+              "ToolTip": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\appsettings.json",
+              "RelativeToolTip": "SearchRepository.API\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-06T09:09:26.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ISearchService.cs",
+              "DocumentMoniker": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\Interfaces\\ISearchService.cs",
+              "RelativeDocumentMoniker": "SearchRepository.API\\Interfaces\\ISearchService.cs",
+              "ToolTip": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\Interfaces\\ISearchService.cs",
+              "RelativeToolTip": "SearchRepository.API\\Interfaces\\ISearchService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T09:09:22.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SearchController.cs",
+              "DocumentMoniker": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\Controllers\\SearchController.cs",
+              "RelativeDocumentMoniker": "SearchRepository.API\\Controllers\\SearchController.cs",
+              "ToolTip": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\Controllers\\SearchController.cs",
+              "RelativeToolTip": "SearchRepository.API\\Controllers\\SearchController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAUwCoAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T09:05:10.031Z",
+              "EditorCaption": ""
             }
           ]
         }
