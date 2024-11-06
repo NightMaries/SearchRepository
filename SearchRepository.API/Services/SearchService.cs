@@ -1,6 +1,7 @@
 namespace SearchRepository.API.Services;
 
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using SearchRepository.API.Services;
 
 public class SearchService: ISearchService
@@ -12,60 +13,76 @@ public class SearchService: ISearchService
         _db = db;
     }
 
-    public async Task AddSearch(JsonRequest jsonRequest)
+    public async Task<JsonRequest> AddSearch(JsonRequest jsonRequest)
     {
-        if(jsonRequest.Subject != "")
+        if (jsonRequest.Subject != "")
         {
+            var github = new ConnectionGitHubService();
+            jsonRequest.JsonString = await github.GetGitHubRepositories(jsonRequest.Subject);
+        }
 
-            _db.jsonRequests.Add(jsonRequest);
-            try
-            {
-                _db.SaveChangesAsync();
-            }
-            catch(Exception ex)
+        try 
+        {
+                await _db.jsonRequests.AddAsync(jsonRequest);
+                await _db.SaveChangesAsync();
+        }
+            catch (Exception ex)
             {
                 throw new Exception($"Ошибка: {ex.Message}");
             }
-        }
+        return jsonRequest;
+
 
     }
 
     public async Task DeleteSearch(int id)
     {
-        var JsonRequest = _db.jsonRequests.Where(j => j.Id == id).FirstOrDefaultAsync();
+        var JsonRequest = await _db.jsonRequests.Where(j => j.Id == id).FirstOrDefaultAsync();
         _db.Remove(JsonRequest);
         try
         {
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
         }
         catch(Exception ex)
         {
             throw new Exception($"Ошибка: {ex.Message}");
         }
-
     }
 
     public async Task<List<Repository>> GetSearch(string subject)
     {
+
         string jsonString = "";
 
-        var request = _db.jsonRequests.Where(j => j.Subject == subject).FirstOrDefaultAsync();
+        var request = await _db.jsonRequests.Where(j => j.Subject == subject).FirstOrDefaultAsync();
 
-        if( await request == null)
+        if (request == null)
         {
             var github = new ConnectionGitHubService();
             jsonString = await github.GetGitHubRepositories(subject);
-           
+            AddSearch(new JsonRequest() { Subject = subject });
+        }
+        else 
+        {
+            jsonString = request.JsonString;
+        }
+        var convert = new ConvertToJsonService();
+        var list = await convert.ParseJson(jsonString);
+        foreach (var item in list)
+        {
+           await _db.Repositories.AddAsync(item);
+        }
+        try
+        {
+            await _db.SaveChangesAsync();
 
-           AddSearch(new JsonRequest()
-           {    
-                Subject = subject,
-                JsonString = jsonString
-           });
+        }
+        catch(Exception ex)
+        {
+            throw new Exception($"{ex.Message}");
         }
 
-        var convert = new ConvertToJsonService();
-        return convert.ParseJson(jsonString);
+        return list;
     }
 
 }

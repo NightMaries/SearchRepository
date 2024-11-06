@@ -4,16 +4,14 @@ namespace SearchRepository.API.Services;
 
 public class ConnectionGitHubService : IConnectionGitHubService
 {
-    public virtual async Task<string> GetGitHubRepositories(string subject)
+    public async virtual Task<string> GetGitHubRepositories(string subject)
     {
         HttpClient httpClient = new HttpClient();
         
-        string request =$"https://api.github.com/search/repositories?={subject}";
-        
-        httpClient.DefaultRequestHeaders.Add("User-Agent",".Net Foudation Repository Reporter");
-        var response = httpClient.GetStringAsync(request);
-        var jsonString = await response;
+        httpClient.DefaultRequestHeaders.Add("User-Agent", "YourAppName/1.0");
+        var response = await httpClient.GetStringAsync($"https://api.github.com/search/repositories?q={subject}");
+        var jsonString = response.ToString();
 
-        return jsonString;
+        return  jsonString;
     }
 }
