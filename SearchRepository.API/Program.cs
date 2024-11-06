@@ -1,5 +1,7 @@
 using SearchRepository.API.Interfaces;
+using SearchRepository.API.Repositories;
 using SearchRepository.API.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<SearchRepositoryContext>();
 builder.Services.AddScoped<IConvertToJsonService, ConvertToJsonService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IConnectionGitHubService, ConnectionGitHubService>();
 builder.Services.AddScoped<ISearchService, SearchService>();
 builder.Services.AddControllers();
