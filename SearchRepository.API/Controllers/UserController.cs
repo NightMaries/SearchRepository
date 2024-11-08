@@ -28,9 +28,16 @@ namespace SearchRepository.API.Controllers
         //[Authorize]
         // GET: api/User
         [HttpGet]
-        public async Task<IActionResult> GetUsers()
+        
+        public async Task<IActionResult> GetUsers([FromQuery]ParametrsForPaginations paginate)
         {
-            return Ok(_quaryFactory.Query("Users").Get());
+
+            var users = _quaryFactory.Query("Users").
+            OrderBy("Id")
+            .Skip((paginate.PageNumber-1)*paginate.PageSize)
+            .Take(paginate.PageSize)
+            .Get();
+            return Ok(users);
         }
 
         // GET: api/User/{id}

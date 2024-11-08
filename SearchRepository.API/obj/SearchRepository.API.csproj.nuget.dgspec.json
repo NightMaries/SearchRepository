@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj": {}
+    "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj": {}
   },
   "projects": {
-    "z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj": {
+    "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj",
+        "projectUniqueName": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj",
         "projectName": "SearchRepository.API",
-        "projectPath": "z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj",
+        "projectPath": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj",
         "packagesPath": "C:\\Users\\ksado\\.nuget\\packages\\",
-        "outputPath": "z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\obj\\",
+        "outputPath": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

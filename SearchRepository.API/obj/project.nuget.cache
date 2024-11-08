@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JAnmpzdr92doY+qkv/W9yMgGYAGDj0smIrTlJkSmzoIxXvmQRU9Bi6Lw+P4t686LoWQ9RJfms3mmp1Bw9quJJQ==",
+  "dgSpecHash": "ETyj7+aMckxLJiuDDFEI/XrCucw7X+p2uMOMdky3A/XTzwJOWQD98PGa2hpNEipDhQrbPZ+Aid9R5WGUZ9TAZg==",
   "success": true,
-  "projectFilePath": "z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj",
+  "projectFilePath": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ksado\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\ksado\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
