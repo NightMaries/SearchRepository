@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace SearchRepository.API.Migrations
 {
     [DbContext(typeof(SearchRepositoryContext))]
-    partial class SearchRepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20241106174424_updateuser")]
+    partial class updateuser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,13 +81,10 @@ namespace SearchRepository.API.Migrations
                     b.Property<string>("Login")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-<<<<<<< HEAD
-=======
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
->>>>>>> c853d94a194009e866d45399e647140e794df01b
 
                     b.Property<string>("Password")
                         .IsRequired()
