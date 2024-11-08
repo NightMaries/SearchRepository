@@ -103,6 +103,11 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+<<<<<<< HEAD
+=======
+SearchRepository.API/obj/
+SearchRepository.API/bin/
+>>>>>>> 311655cf59adbd72d5bfd829ef7a8220c187a08c
 
 # Chutzpah Test files
 _Chutzpah*
