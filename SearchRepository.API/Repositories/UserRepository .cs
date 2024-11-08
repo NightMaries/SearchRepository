@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using SearchRepository.API.Entities;
 using SearchRepository.API.Interfaces;
+using SqlKata;
+using SqlKata.Execution;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
@@ -11,20 +13,27 @@ namespace SearchRepository.API.Repositories
     public class UserRepository : IUserRepository
     {
         private readonly SearchRepositoryContext _db;
+        
+        private QueryFactory _queryFactory;
 
         public UserRepository(SearchRepositoryContext db)
         {
+            _queryFactory = db.SqlQueryFactory;
             _db = db;
+            
         }
 
-        public User CreateUser(User user)
+        public async Task<User> CreateUser(User user)
         {
-            if(user != null)
+            if(user == null)
             {
+                return user;
+            }
+            
                 _db.Add(user);
                 try
                 {
-                    _db.SaveChanges();
+                    _db.SaveChangesAsync();
                 }
                 catch(SqlTypeException ex)
                 {
@@ -35,7 +44,7 @@ namespace SearchRepository.API.Repositories
                     throw new Exception($"{ex.Message}");
                 }
                 
-            }
+            
             return user;
         }
 

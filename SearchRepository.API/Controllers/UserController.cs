@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using SearchRepository.API.Entities;
 using SearchRepository.API.Interfaces;
 using SearchRepository.API.Repositories;
+using SqlKata.Execution;
 
 namespace SearchRepository.API.Controllers
 {
@@ -16,51 +17,64 @@ namespace SearchRepository.API.Controllers
         private readonly ITokenService _TokenService;
         HMACSHA256 hmac = new HMACSHA256();
 
-        public UserController(IUserRepository repository, ITokenService tokenService)
+        private readonly QueryFactory _quaryFactory;
+
+        public UserController(SearchRepositoryContext connectionDb, ITokenService tokenService, IUserRepository repository)
         {
             _TokenService = tokenService;
-            
-            this._repository = repository;
+            _repository = repository;
+            _quaryFactory = connectionDb.SqlQueryFactory;
         }
-        [Authorize]
+        //[Authorize]
         // GET: api/User
         [HttpGet]
-        public IActionResult GetUsers()
+        public async Task<IActionResult> GetUsers()
         {
-            return Ok(_repository.GetUsers());
+            return Ok(_quaryFactory.Query("Users").Get());
         }
 
         // GET: api/User/{id}
         [HttpGet("{id}")]
         public IActionResult GetUser(int id)
         {
-            var user = _repository.FindUserById(id);
+            var user = _quaryFactory.Query("Users").Where("Id",$"{id}").Get();
+            
             if (user == null) return NotFound($"User with id {id} not found.");
             return Ok(user);
         }
 
         // POST: api/User
         [HttpPost]
-        public IActionResult CreateUser(UserDto userDto)
+        public async Task<ActionResult> CreateUser(UserDto userDto)
         {
-            User user = new User{
-                Login = userDto.Login,                
-                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(userDto.Password)),
-                PasswordSalt = hmac.Key,
-                Token = _TokenService.CreateToken(userDto.Login)
-                
-            };
-            if (user == null) return BadRequest("User data is null.");
-            var createdUser = _repository.CreateUser(user);
-            return CreatedAtAction(nameof(GetUser), new { id = createdUser.Id }, createdUser);
+
+            var user = _quaryFactory.Query("Users").Insert(new 
+            {
+                    Login = userDto.Login,
+                    PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(userDto.Password)),
+                    PasswordSalt = hmac.Key,
+                    Token = _TokenService.CreateToken(userDto.Login)
+            });
+            return Ok(user);
         }
 
         // PUT: api/User/{id}
         [HttpPut("{id}")]
-        public IActionResult EditUser(int id, User user)
+        public IActionResult EditUser(int id, UserDto userDto)
         {
-            if (user == null) return BadRequest("User data is null.");
-            var updatedUser = _repository.EditUser(user, id);
+
+            var updatedUser = _quaryFactory.Query("Users").Where("Id",$"{id}").Update(new
+            {
+            
+                    Login = userDto.Login,
+                    PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(userDto.Password)),
+                    PasswordSalt = hmac.Key,
+                    Token = _TokenService.CreateToken(userDto.Login)
+            
+
+            });
+            if (userDto == null) return BadRequest("User data is null.");
+            
             if (updatedUser == null) return NotFound($"User with id {id} not found.");
             return Ok(updatedUser);
         }
@@ -69,8 +83,12 @@ namespace SearchRepository.API.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteUser(int id)
         {
-            var success = _repository.DeleteUser(id);
-            if (!success) return NotFound($"User with id {id} not found.");
+            /*
+            var user = _quaryFactory.Query("Users").Where("Id",$"{id}").Get();
+            if (user == null) return NotFound($"User with id {id} not found.");
+*/
+            var success = _quaryFactory.Query("Users").Where("Id",$"{id}").Delete();
+            
             return NoContent();
         }
     }
