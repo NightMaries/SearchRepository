@@ -258,3 +258,5 @@ B:\Search\SearchRepository\SearchRepository.API\obj\Debug\net8.0\refint\SearchRe
 B:\Search\SearchRepository\SearchRepository.API\obj\Debug\net8.0\SearchRepository.API.pdb
 B:\Search\SearchRepository\SearchRepository.API\obj\Debug\net8.0\SearchRepository.API.genruntimeconfig.cache
 B:\Search\SearchRepository\SearchRepository.API\obj\Debug\net8.0\ref\SearchRepository.API.dll
+B:\Search\SearchRepository\SearchRepository.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+B:\Search\SearchRepository\SearchRepository.API\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
