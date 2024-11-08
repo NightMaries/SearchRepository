@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "B:\\Search\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj": {}
+    "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj": {}
   },
   "projects": {
-    "B:\\Search\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj": {
+    "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "B:\\Search\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj",
+        "projectUniqueName": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj",
         "projectName": "SearchRepository.API",
-        "projectPath": "B:\\Search\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj",
-        "packagesPath": "C:\\Users\\Алексей\\.nuget\\packages\\",
-        "outputPath": "B:\\Search\\SearchRepository\\SearchRepository.API\\obj\\",
+        "projectPath": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\SearchRepository.API.csproj",
+        "packagesPath": "C:\\Users\\ksado\\.nuget\\packages\\",
+        "outputPath": "Z:\\VisualCodeProjects\\SearchRepository\\SearchRepository.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Алексей\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ksado\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -78,9 +78,13 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
-            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+            "SqlKata": {
               "target": "Package",
-              "version": "[8.0.10, )"
+              "version": "[2.4.0, )"
+            },
+            "SqlKata.Execution": {
+              "target": "Package",
+              "version": "[2.4.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -106,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
