@@ -5,7 +5,7 @@
 namespace SearchRepository.API.Migrations
 {
     /// <inheritdoc />
-    public partial class Entities : Migration
+    public partial class ilya : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,8 +16,8 @@ namespace SearchRepository.API.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    RepositoryUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Json = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Subject = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    JsonString = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -30,11 +30,11 @@ namespace SearchRepository.API.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Author = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Author = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Stars = table.Column<int>(type: "int", nullable: false),
                     Watches = table.Column<int>(type: "int", nullable: false),
-                    Url = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Url = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace SearchRepository.API.Migrations
 {
     [DbContext(typeof(SearchRepositoryContext))]
-    [Migration("20241105122516_Entities")]
-    partial class Entities
+    [Migration("20241106174424_updateuser")]
+    partial class updateuser
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,12 +31,10 @@ namespace SearchRepository.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Json")
-                        .IsRequired()
+                    b.Property<string>("JsonString")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("RepositoryUrl")
-                        .IsRequired()
+                    b.Property<string>("Subject")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -53,18 +51,15 @@ namespace SearchRepository.API.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Author")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Stars")
                         .HasColumnType("int");
 
                     b.Property<string>("Url")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Watches")
@@ -84,6 +79,10 @@ namespace SearchRepository.API.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Login")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
