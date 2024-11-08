@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SearchRepository.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ae358f23551f0d7bcf5743f8b086d515e18a651")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c68d92344dc5bf606457e7910897e7426db77daa")]
 [assembly: System.Reflection.AssemblyProductAttribute("SearchRepository.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SearchRepository.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

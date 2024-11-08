@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Cryptography;
+using System.Text;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SearchRepository.API.Entities;
 using SearchRepository.API.Interfaces;
 using SearchRepository.API.Repositories;
@@ -10,18 +13,21 @@ namespace SearchRepository.API.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _repository;
+        private readonly ITokenService _TokenService;
+        HMACSHA256 hmac = new HMACSHA256();
 
-        public UserController(IUserRepository repository)
+        public UserController(IUserRepository repository, ITokenService tokenService)
         {
+            _TokenService = tokenService;
+            
             this._repository = repository;
         }
-
+        [Authorize]
         // GET: api/User
         [HttpGet]
         public IActionResult GetUsers()
         {
-            var users = _repository.GetUsers();
-            return Ok(users);
+            return Ok(_repository.GetUsers());
         }
 
         // GET: api/User/{id}
@@ -35,8 +41,15 @@ namespace SearchRepository.API.Controllers
 
         // POST: api/User
         [HttpPost]
-        public IActionResult CreateUser(User user)
+        public IActionResult CreateUser(UserDto userDto)
         {
+            User user = new User{
+                Login = userDto.Login,                
+                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(userDto.Password)),
+                PasswordSalt = hmac.Key,
+                Token = _TokenService.CreateToken(userDto.Login)
+                
+            };
             if (user == null) return BadRequest("User data is null.");
             var createdUser = _repository.CreateUser(user);
             return CreatedAtAction(nameof(GetUser), new { id = createdUser.Id }, createdUser);

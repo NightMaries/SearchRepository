@@ -60,7 +60,7 @@ public class SearchService: ISearchService
         {
             var github = new ConnectionGitHubService();
             jsonString = await github.GetGitHubRepositories(subject);
-            await AddSearch(new JsonRequest() { Subject = subject });
+            AddSearch(new JsonRequest() { Subject = subject });
         }
         else 
         {
