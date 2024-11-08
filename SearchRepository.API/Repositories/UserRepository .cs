@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using SearchRepository.API.Entities;
 using SearchRepository.API.Interfaces;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 
 namespace SearchRepository.API.Repositories
@@ -24,10 +26,15 @@ namespace SearchRepository.API.Repositories
                 {
                     _db.SaveChanges();
                 }
+                catch(SqlTypeException ex)
+                {
+                    throw new SqlTypeException($"{ex.Message}");
+                }
                 catch (Exception ex)
                 {
                     throw new Exception($"{ex.Message}");
                 }
+                
             }
             return user;
         }
